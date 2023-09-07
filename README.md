@@ -1,10 +1,12 @@
 Doberman Netzwerk Analysis
 ==========================
 
+https://mmccartn.github.io/dobewerk/
+
 Requirements
 ------------
 
- * Node 16+
+ * Node 18+
 
 Installation
 ------------
