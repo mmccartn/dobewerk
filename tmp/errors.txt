@@ -1,0 +1,144 @@
+Hydie
+------------------------------------------------------------------------
+Generation 34
++- Using existing checkpoint (resolved_from_pdf_cache)
+  +- Removing processed Dog of Interest from MyAKC
+  +- Queueing 2 parent record(s) for generation 35
+
+Hertog Esger V Stoltenborg
+------------------------------------------------------------------------
+Generation 34
+  +- Searching AKC by name
+  +- Trying AKC name candidate: Hertog Esger V Stoltenborg
+Traceback (most recent call last):
+  File "C:\Users\burt\dev\pedigry\akc-scrape\akc_pedigree_scraper.py", line 1568, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\burt\dev\pedigry\akc-scrape\akc_pedigree_scraper.py", line 1529, in main
+    collect(
+    ~~~~~~~^
+        browser,
+        ^^^^^^^^
+    ...<20 lines>...
+        args.record_har,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\burt\dev\pedigry\akc-scrape\akc_pedigree_scraper.py", line 1247, in collect
+    canonical_name, selected_akc_number = choose_dog(page, requested_name, breed)
+                                          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\burt\dev\pedigry\akc-scrape\akc_pedigree_scraper.py", line 602, in choose_dog
+    popup.locator("#button").click()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\sync_api\_generated.py", line 17876, in click
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.click(
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_locator.py", line 165, in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_frame.py", line 593, in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#button")
+    - locator resolved to <input id="button" type="button" name="button" value="Next >" onclick="Javascript:wait_message(); checksubmit()"/>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - performing click action
+    - click action done
+    - waiting for scheduled navigations to finish
+
+
+
+
+
+WS88582105
+------------------------------------------------------------------------
+Batch dog 9/10
+
+WS88582101
+------------------------------------------------------------------------
+Batch dog 10/10
+  +- Direct batch table request failed; using browser metadata fallback: Direct MyAKC table response lacks row keys for: WS885945
+  +- Opening one entry-form chooser for 8 batch dogs
+Traceback (most recent call last):
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 728, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 685, in main
+    saved_since_checkpoint += process_batch(page, pending[offset : offset + args.batch_size], records, args.output, args.downloads_dir, manifest, args.manif
+est, args.breed, pdf_number_index, journal, args.http_optimization)
+                              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 545, in process_batch
+    chooser_data = direct_batch_chooser(page, rows, [number for _, number, _, _ in added])
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 269, in direct_batch_chooser
+    keys = [rows[number]["key_stkhldr"] for number in numbers]
+            ~~~~^^^^^^^^
+KeyError: 'WS88594506'
+
+WS87666903
+------------------------------------------------------------------------
+Batch dog 5/10
+    +- Trying AKC number lookup: WS87666903
+
+WS87666902
+------------------------------------------------------------------------
+Batch dog 6/10
+    +- Trying AKC number lookup: WS87666902
+
+WS87666901
+------------------------------------------------------------------------
+Batch dog 7/10
++- Compacted final dataset journal into dogs.json
+Traceback (most recent call last):
+  File "C:\Users\burt\dev\pedigry\akc-scrape\akc_pedigree_scraper.py", line 728, in choose_dog_by_number
+    with page.expect_popup(timeout=POPUP_EVENT_TIMEOUT) as popup_info:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 85, in __exit__
+    self._event.value
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 59, in value
+    raise exception
+playwright._impl._errors.TimeoutError: Timeout 2000ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 728, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 685, in main
+    saved_since_checkpoint += process_batch(page, pending[offset : offset + args.batch_size], records, args.output, args.downloads_dir, manifest, args.manifes
+t, args.breed, pdf_number_index, journal, args.http_optimization)
+                              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 499, in process_batch
+    canonical_name, resolved_number = choose_dog_by_number(page, number)
+                                      ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\burt\dev\pedigry\akc-scrape\akc_pedigree_scraper.py", line 735, in choose_dog_by_number
+    raise RuntimeError("MyAKC did not open the Add Dog popup.")
+RuntimeError: MyAKC did not open the Add Dog popup.
