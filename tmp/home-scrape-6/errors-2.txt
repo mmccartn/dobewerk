@@ -1,0 +1,210 @@
+------------------------------------------------------------------------
+Batch dog 8/10
+
+WS35296001
+------------------------------------------------------------------------
+Batch dog 9/10
+
+WS35271601
+------------------------------------------------------------------------
+Batch dog 10/10
+  +- Opening one entry-form chooser for 10 batch dogs
++- Compacted final dataset journal into dogs.json
+Traceback (most recent call last):
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 733, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 690, in main
+    saved_since_checkpoint += process_batch(page, pending[offset : offset + args.batch_size], records, args.output, args.downloads_dir, manifest,
+ args.manifest, args.breed, pdf_number_index, journal, args.http_optimization)
+                              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 550, in process_batch
+    chooser_data = direct_batch_chooser(page, rows, [number for _, number, _, _ in added])
+  File "C:\Users\burt\dev\pedigry\bulk-scrape\akc_bulk_registration_scraper.py", line 288, in direct_batch_chooser
+    action = page.context.request.post(action_url, form=form)
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\sync_api\_generated.py", line 21455, in post
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.post(
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_fetch.py", line 290, in post
+    return await self.fetch(
+           ^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_fetch.py", line 329, in fetch
+    return await self._inner_fetch(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+    )
+    ^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_fetch.py", line 435, in _inner_fetch
+    response = await self._channel.send(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<18 lines>...
+    )
+    ^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\burt\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: APIRequestContext.post: read ECONNRESET
+Call log:
+  - → POST https://www.apps.akc.org/apps/online_accounts/dog_management/index.cfm?action=filters
+    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36
+    - accept: */*
+    - accept-encoding: gzip,deflate,br
+    - content-type: application/x-www-form-urlencoded
+    - content-length: 245
+    - cookie: DIRTY_FLAG_ORKS=FALSE; CFID=530458007; CFTOKEN=5f6857b92afde784-C47668EF-B447-5074-F930AD8B5F9DA705; APPREDIRECT=yes; SECURITY=set%
+3B%20HttpOnly; OTGPPConsent=DBABBg~BUUAAAFY.QA; gig_bootstrap_3_6N5MqYstj26g4IjwY36Jq-XVS3ZmjqaJAjKxaPB8k5VOLJYENzfOK9_zsgKJDzx9=gigya-login_ver4
+; AKC_GIGYA_UID=d3b6a1aaeffc4b2f8223b11befd57b04; AKC_ACCT=Bearer; PHPSESSID=vkaabi53gbjltcg1po0co5vcs5; AKC_DISPLAYNAME=Matt McCartney; AKCAPPS_
+IS_LOGGED_IN=Y; JSESSIONID=7830888bc4c31d595a0076227333157f3c48; glt_3_6N5MqYstj26g4IjwY36Jq-XVS3ZmjqaJAjKxaPB8k5VOLJYENzfOK9_zsgKJDzx9=st2.s.AtL
+ts7k5zA.E5X2SzkO87yYSvRueM0_VV9XiAOzqCmdGlpLBntZmFXEgCk39lqtFpR5ZpmQ5mpaIGFrG8A83sdJgxi-WzRIztdlJ-7tFwUR1eWk_t0B0kDA3kMp5MgcYWioxegRHD7g.wzsRoU-F
+brBjd1HE2Pk8dTqyhhKJ1Yb1XmT6TzqPiTMCKSv-4UDQhuiLoWtuM5K6OPXJ1tdF0KtYTLUYYvcxQA.sc3; AKC_ACC=YjA0YjkwN2JhZWNmNjY3MTU2OWFjMmQ3MmY2N2EzNzhlYTBkZTQxN
+mY2MTA0Y2NlNDQ3YThhZTZmYTM5MzdjMg; AKC_ACC_EXP=September%2028%2C%202026%2023%3A52%3A28; AKC_AUTHZ=A05EBB2C437CDFA7244DDF65C269BE4BCBAF69342CE35FA
+BBC6F1324A831F5E9; AKC_ACCOUNT_COOK=54999689; AKC_SESSION_ISLOGGED_IN=Y; AKC_SESSION=33d54513%2Df474%2D4079%2Dba6c%2Dbbf77f9f5b0e; AKC_USERNAME_C
+OOK=mattsmccartney%40gmail%2Ecom%20%5Bsite%5D; CFID=530458007; CFTOKEN=5f6857b92afde784%2DC47668EF%2DB447%2D5074%2DF930AD8B5F9DA705; DISPLAY_NAME
+=; OptanonConsent=isGpcEnabled=0&datestamp=Tue+Sep+29+2026+03%3A08%3A12+GMT-0700+(Pacific+Daylight+Time)&version=202507.1.0&browserGpcFlag=0&isIA
+BGlobal=false&hosts=&consentId=18278244-c0be-44ae-967a-46a9b522dfa1&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&GPPCookiesCount=1&
+gppSid=8&groups=C0001%3A1%2CSSPD_BG%3A0%2CC0002%3A0%2CC0003%3A0%2CC0004%3A0&AwaitingReconsent=false
+
+...
+
+PDF index: 23187 files; 14796 cached; 8391 new or changed.
+PDF index: extracted metadata for 100/8391 changed files.
+PDF index: extracted metadata for 200/8391 changed files.
+PDF index: extracted metadata for 300/8391 changed files.
+PDF index: extracted metadata for 400/8391 changed files.
+PDF index: extracted metadata for 500/8391 changed files.
+PDF index: extracted metadata for 600/8391 changed files.
+PDF index: extracted metadata for 700/8391 changed files.
+PDF index: extracted metadata for 800/8391 changed files.
+PDF index: extracted metadata for 900/8391 changed files.
+PDF index: extracted metadata for 1000/8391 changed files.
+PDF index: extracted metadata for 1100/8391 changed files.
+PDF index: extracted metadata for 1200/8391 changed files.
+PDF index: extracted metadata for 1300/8391 changed files.
+PDF index: extracted metadata for 1400/8391 changed files.
+PDF index: extracted metadata for 1500/8391 changed files.
+PDF index: extracted metadata for 1600/8391 changed files.
+PDF index: extracted metadata for 1700/8391 changed files.
+PDF index: extracted metadata for 1800/8391 changed files.
+PDF index: extracted metadata for 1900/8391 changed files.
+PDF index: extracted metadata for 2000/8391 changed files.
+PDF index: extracted metadata for 2100/8391 changed files.
+PDF index: extracted metadata for 2200/8391 changed files.
+PDF index: extracted metadata for 2300/8391 changed files.
+PDF index: extracted metadata for 2400/8391 changed files.
+PDF index: extracted metadata for 2500/8391 changed files.
+PDF index: extracted metadata for 2600/8391 changed files.
+PDF index: extracted metadata for 2700/8391 changed files.
+PDF index: extracted metadata for 2800/8391 changed files.
+PDF index: extracted metadata for 2900/8391 changed files.
+PDF index: extracted metadata for 3000/8391 changed files.
+PDF index: extracted metadata for 3100/8391 changed files.
+PDF index: extracted metadata for 3200/8391 changed files.
+PDF index: extracted metadata for 3300/8391 changed files.
+PDF index: extracted metadata for 3400/8391 changed files.
+PDF index: extracted metadata for 3500/8391 changed files.
+PDF index: extracted metadata for 3600/8391 changed files.
+PDF index: extracted metadata for 3700/8391 changed files.
+PDF index: extracted metadata for 3800/8391 changed files.
+PDF index: extracted metadata for 3900/8391 changed files.
+PDF index: extracted metadata for 4000/8391 changed files.
+PDF index: extracted metadata for 4100/8391 changed files.
+PDF index: extracted metadata for 4200/8391 changed files.
+PDF index: extracted metadata for 4300/8391 changed files.
+PDF index: extracted metadata for 4400/8391 changed files.
+PDF index: extracted metadata for 4500/8391 changed files.
+PDF index: extracted metadata for 4600/8391 changed files.
+PDF index: extracted metadata for 4700/8391 changed files.
+PDF index: extracted metadata for 4800/8391 changed files.
+PDF index: extracted metadata for 4900/8391 changed files.
+PDF index: extracted metadata for 5000/8391 changed files.
+PDF index: extracted metadata for 5100/8391 changed files.
+PDF index: extracted metadata for 5200/8391 changed files.
+PDF index: extracted metadata for 5300/8391 changed files.
+PDF index: extracted metadata for 5400/8391 changed files.
+PDF index: extracted metadata for 5500/8391 changed files.
+PDF index: extracted metadata for 5600/8391 changed files.
+PDF index: extracted metadata for 5700/8391 changed files.
+PDF index: extracted metadata for 5800/8391 changed files.
+PDF index: extracted metadata for 5900/8391 changed files.
+PDF index: extracted metadata for 6000/8391 changed files.
+PDF index: extracted metadata for 6100/8391 changed files.
+PDF index: extracted metadata for 6200/8391 changed files.
+PDF index: extracted metadata for 6300/8391 changed files.
+PDF index: extracted metadata for 6400/8391 changed files.
+PDF index: extracted metadata for 6500/8391 changed files.
+PDF index: extracted metadata for 6600/8391 changed files.
+PDF index: extracted metadata for 6700/8391 changed files.
+PDF index: extracted metadata for 6800/8391 changed files.
+PDF index: extracted metadata for 6900/8391 changed files.
+PDF index: extracted metadata for 7000/8391 changed files.
+PDF index: extracted metadata for 7100/8391 changed files.
+PDF index: extracted metadata for 7200/8391 changed files.
+PDF index: extracted metadata for 7300/8391 changed files.
+PDF index: extracted metadata for 7400/8391 changed files.
+PDF index: extracted metadata for 7500/8391 changed files.
+PDF index: extracted metadata for 7600/8391 changed files.
+PDF index: extracted metadata for 7700/8391 changed files.
+PDF index: extracted metadata for 7800/8391 changed files.
+PDF index: extracted metadata for 7900/8391 changed files.
+PDF index: extracted metadata for 8000/8391 changed files.
+PDF index: extracted metadata for 8100/8391 changed files.
+PDF index: extracted metadata for 8200/8391 changed files.
+PDF index: extracted metadata for 8300/8391 changed files.
+PDF index: extracted metadata for 8391/8391 changed files.
+Bulk candidates: 41698; already collected: 12198; pending: 29500; batch size: 10
+
+XS920331
+------------------------------------------------------------------------
+Batch dog 1/10
+  +- Direct registration request failed; using browser fallback: AKC could not resolve number 'XS920331'.
+    +- Trying AKC number lookup: XS920331
+
+XG839212
+------------------------------------------------------------------------
+Batch dog 2/10
+  +- Direct registration request failed; using browser fallback: AKC could not resolve number 'XG839212'.
+    +- Trying AKC number lookup: XG839212
+
+WZ56915510
+------------------------------------------------------------------------
+Batch dog 3/10
+  +- Direct registration request failed; using browser fallback: AKC could not resolve number 'WZ56915510'.
+    +- Trying AKC number lookup: WZ56915510
+
+WZ40052905
+------------------------------------------------------------------------
+Batch dog 4/10
+  +- Direct registration request failed; using browser fallback: AKC could not resolve number 'WZ40052905'.
+    +- Trying AKC number lookup: WZ40052905
+
+WWF990625
+------------------------------------------------------------------------
+Batch dog 5/10
+  +- Direct registration request failed; using browser fallback: AKC could not resolve number 'WWF990625'.
+    +- Trying AKC number lookup: WWF990625
+
+WSS22184704
+------------------------------------------------------------------------
+Batch dog 6/10
+  +- Direct registration request failed; using browser fallback: AKC could not resolve number 'WSS22184704'.
+    +- Trying AKC number lookup: WSS22184704
+
